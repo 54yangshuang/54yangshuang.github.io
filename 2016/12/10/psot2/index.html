@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://p1.bpimg.com/567571/e8c71a7e410079ed.png">
 <meta property="og:image" content="http://p1.bqimg.com/567571/f37db73d571cd778.png">
 <meta property="og:image" content="http://p1.bqimg.com/567571/d9d7dce9571a6149.png">
-<meta property="og:updated_time" content="2016-12-10T08:14:48.835Z">
+<meta property="og:updated_time" content="2016-12-10T08:18:06.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于清除浮动">
 <meta name="twitter:description" content="看了两天的javascript了，我觉得学习javascript与学习html、css相比，前者的难度简直与后者不是一个级别的阿！香菇！蓝瘦！
@@ -389,7 +389,7 @@
       
         <p>看了两天的javascript了，我觉得学习javascript与学习html、css相比，前者的难度简直与后者不是一个级别的阿！香菇！蓝瘦！</p>
 <p>唉，头疼，今晚就CSS里清除浮动的知识写一下我的理解吧！<a id="more"></a></p>
-<p>##1.浮动引起的事故<br>浮动会引起什么事故呢？不多说直接上代码先：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">        .boder&#123;</div><div class="line">            width: 500px;</div><div class="line">            border: 1px solid #000;</div><div class="line">        &#125;</div><div class="line">        .box1&#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            background-color:red;</div><div class="line">        &#125;</div><div class="line">        .box2&#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            background-color:yellow;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;boder&quot;&gt;</div><div class="line">    &lt;div class=&quot;box1&quot;&gt;盒子1&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box2&quot;&gt;盒子2&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="1-浮动引起的事故"><a href="#1-浮动引起的事故" class="headerlink" title="1.浮动引起的事故"></a>1.浮动引起的事故</h3><p>浮动会引起什么事故呢？不多说直接上代码先：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">        .boder&#123;</div><div class="line">            width: 500px;</div><div class="line">            border: 1px solid #000;</div><div class="line">        &#125;</div><div class="line">        .box1&#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            background-color:red;</div><div class="line">        &#125;</div><div class="line">        .box2&#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            background-color:yellow;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;boder&quot;&gt;</div><div class="line">    &lt;div class=&quot;box1&quot;&gt;盒子1&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box2&quot;&gt;盒子2&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <p><img src="http://p1.bpimg.com/567571/44db03ed36a8c83b.png" alt="此处输入图片的描述"><br>上面是没有使用浮动之前，下面来给BOX1和BOX2分别添加浮动。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.box1&#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    background-color:red;</div><div class="line">    float: left; </div><div class="line">&#125;</div><div class="line">.box2&#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    background-color:yellow;</div><div class="line">    float: right;       </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><img src="http://p1.bpimg.com/567571/e8c71a7e410079ed.png" alt="此处输入图片的描述"><br>我们会发现变成了这样子，最外部的边框变成了一条细线。</p>
 <hr>
@@ -398,24 +398,24 @@
 <p><strong>浮动前布局正常</strong><br><img src="http://p1.bqimg.com/567571/f37db73d571cd778.png" alt="浮动前"></p>
 <p><strong>浮动后布局被破坏</strong><br><img src="http://p1.bqimg.com/567571/d9d7dce9571a6149.png" alt="此处输入图片的描述"></p>
 <hr>
-<p>##2.清除浮动（解决事故）<br>由于浮动会影响页面布局，为了避免发生这样的事情发生就要清除浮动。</p>
-<p>###<strong>方法一：使用带clear属性的空元素</strong><br>在浮动元素后使用一个空元素如<code>&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</code>，并在CSS中添加<code>.clear{clear:both;}</code>属性即可清除浮动。也可以使用<code>&lt;br class=&quot;clear&quot; /&gt;</code>或<code>&lt;hr class=&quot;clear&quot; /&gt;</code>来进行清理。</p>
+<h3 id="2-清除浮动（解决事故）"><a href="#2-清除浮动（解决事故）" class="headerlink" title="2.清除浮动（解决事故）"></a>2.清除浮动（解决事故）</h3><p>由于浮动会影响页面布局，为了避免发生这样的事情发生就要清除浮动。</p>
+<h4 id="方法一：使用带clear属性的空元素"><a href="#方法一：使用带clear属性的空元素" class="headerlink" title="方法一：使用带clear属性的空元素"></a><strong>方法一：使用带clear属性的空元素</strong></h4><p>在浮动元素后使用一个空元素如<code>&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</code>，并在CSS中添加<code>.clear{clear:both;}</code>属性即可清除浮动。也可以使用<code>&lt;br class=&quot;clear&quot; /&gt;</code>或<code>&lt;hr class=&quot;clear&quot; /&gt;</code>来进行清理。</p>
 <blockquote>
 <p><strong>优点：简单，代码少，浏览器兼容性好。<br>缺点：需要添加大量无语义的html元素，代码不够优雅，后期不容易维护</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">        .boder&#123;</div><div class="line">            width: 500px;</div><div class="line">            border: 1px solid #000;</div><div class="line">        &#125;</div><div class="line">        .box1&#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            background-color:red;</div><div class="line">            float: left;</div><div class="line">        &#125;</div><div class="line">        .box2&#123;</div><div class="line">            width: 200px;</div><div class="line">            height: 200px;</div><div class="line">            background-color:yellow;</div><div class="line">            float: right;</div><div class="line">        &#125;</div><div class="line">        .clear&#123;</div><div class="line">            clear:both;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;boder&quot;&gt;</div><div class="line">    &lt;div class=&quot;box1&quot;&gt;盒子1&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box2&quot;&gt;盒子2&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <hr>
-<p>###<strong>方法二：使用CSS的overflow属性</strong><br>给浮动元素的容器添加overflow:hidden;或overflow:auto;可以清除浮动，另外在 IE6 中还需要触发 hasLayout ，例如为父元素设置容器宽高或设置 zoom:1。在添加overflow属性后，浮动元素又回到了容器层，把容器高度撑起，达到了清理浮动的效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.boder&#123;</div><div class="line">    width: 500px;</div><div class="line">    border: 1px solid #000;</div><div class="line">    overflow: hidden;</div><div class="line">    *zoom: 1;</div><div class="line">&#125;</div><div class="line">.box1&#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    background-color:red;</div><div class="line">    float: left;</div><div class="line">&#125;</div><div class="line">.box2&#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    background-color:yellow;</div><div class="line">    float: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="方法二：使用CSS的overflow属性"><a href="#方法二：使用CSS的overflow属性" class="headerlink" title="方法二：使用CSS的overflow属性"></a><strong>方法二：使用CSS的overflow属性</strong></h4><p>给浮动元素的容器添加overflow:hidden;或overflow:auto;可以清除浮动，另外在 IE6 中还需要触发 hasLayout ，例如为父元素设置容器宽高或设置 zoom:1。在添加overflow属性后，浮动元素又回到了容器层，把容器高度撑起，达到了清理浮动的效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.boder&#123;</div><div class="line">    width: 500px;</div><div class="line">    border: 1px solid #000;</div><div class="line">    overflow: hidden;</div><div class="line">    *zoom: 1;</div><div class="line">&#125;</div><div class="line">.box1&#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    background-color:red;</div><div class="line">    float: left;</div><div class="line">&#125;</div><div class="line">.box2&#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    background-color:yellow;</div><div class="line">    float: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <hr>
-<p>####<strong>方法三：给浮动的元素的容器添加浮动</strong><br>给浮动元素的容器也添加上浮动属性即可清除内部浮动，但是这样会使其整体浮动，影响布局，不推荐使用。</p>
+<h4 id="方法三：给浮动的元素的容器添加浮动"><a href="#方法三：给浮动的元素的容器添加浮动" class="headerlink" title="方法三：给浮动的元素的容器添加浮动"></a><strong>方法三：给浮动的元素的容器添加浮动</strong></h4><p>给浮动元素的容器也添加上浮动属性即可清除内部浮动，但是这样会使其整体浮动，影响布局，不推荐使用。</p>
 <hr>
-<p>###<strong>方法四：给后面的盒子添加clear属性</strong><br>什么都不做，给浮动元素后面的元素添加clear属性.</p>
+<h4 id="方法四：给后面的盒子添加clear属性"><a href="#方法四：给后面的盒子添加clear属性" class="headerlink" title="方法四：给后面的盒子添加clear属性"></a><strong>方法四：给后面的盒子添加clear属性</strong></h4><p>什么都不做，给浮动元素后面的元素添加clear属性.</p>
 <blockquote>
 <p><strong>注意点: 当我们给某个元素添加clear属性之后, 那么这个属性的margin属性就会失效</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.boder&#123;</div><div class="line">    width: 500px;</div><div class="line">    border: 1px solid #000;</div><div class="line">    overflow: hidden;</div><div class="line">    *zoom: 1;</div><div class="line">&#125;</div><div class="line">.box1&#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    background-color:red;</div><div class="line">    float: left;</div><div class="line">&#125;</div><div class="line">.box2&#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    background-color:yellow;</div><div class="line">    float: right;</div><div class="line">    clear：both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
-<p>###<strong>方法五：使用CSS的:after伪元素</strong><br>本质上和方法一一样， 只不过是直接通过CSS代码添加了一个透明元素, 不用在html结构里添加元素。<br>注意点:<br>IE6中不支持这种方式, 为了兼容IE6必须给前面的盒子添加*zoom:1;属性</p>
+<h4 id="方法五：使用CSS的-after伪元素"><a href="#方法五：使用CSS的-after伪元素" class="headerlink" title="方法五：使用CSS的:after伪元素"></a><strong>方法五：使用CSS的:after伪元素</strong></h4><p>本质上和方法一一样， 只不过是直接通过CSS代码添加了一个透明元素, 不用在html结构里添加元素。<br>注意点:<br>IE6中不支持这种方式, 为了兼容IE6必须给前面的盒子添加*zoom:1;属性</p>
 <blockquote>
 <p><strong>对完美的清理浮动的方式，让文档结构更加清晰。</strong></p>
 </blockquote>
@@ -425,7 +425,7 @@
 <p>一是利用 clear 属性，包括在浮动元素末尾添加一个带有 clear: both 属性的空 div 来闭合元素；为后一个盒子添加clear: both；利用 :after 伪元素的方法也是在元素末尾添加一个内容为一个点并带有 clear: both 属性的元素实现的。</p>
 <p>二是触发浮动元素父元素的 BFC (Block Formatting Contexts, 块级格式化上下文)，使到该父元素可以包含浮动元素。</p>
 <hr>
-<p>###<strong>什么是BFC？</strong><br>BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
+<h4 id="什么是BFC？"><a href="#什么是BFC？" class="headerlink" title="什么是BFC？"></a><strong>什么是BFC？</strong></h4><p>BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
 <p>比如浮动元素会形成BFC，浮动元素内部子元素的主要受该浮动元素影响，两个浮动元素之间是互不影响的。这里有点类似一个BFC就是一个独立的行政单位的意思。也可以说BFC就是一个作用范围。可以把它理解成是一个独立的容器，并且这个容器的里box的布局，与这个容器外的毫不相干。</p>
 <ul>
 <li><strong>BFC布局的特性</strong>：<ul>
@@ -556,8 +556,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -653,6 +662,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-浮动引起的事故"><span class="nav-number">1.</span> <span class="nav-text">1.浮动引起的事故</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-清除浮动（解决事故）"><span class="nav-number">2.</span> <span class="nav-text">2.清除浮动（解决事故）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一：使用带clear属性的空元素"><span class="nav-number">2.1.</span> <span class="nav-text">方法一：使用带clear属性的空元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：使用CSS的overflow属性"><span class="nav-number">2.2.</span> <span class="nav-text">方法二：使用CSS的overflow属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三：给浮动的元素的容器添加浮动"><span class="nav-number">2.3.</span> <span class="nav-text">方法三：给浮动的元素的容器添加浮动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法四：给后面的盒子添加clear属性"><span class="nav-number">2.4.</span> <span class="nav-text">方法四：给后面的盒子添加clear属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法五：使用CSS的-after伪元素"><span class="nav-number">2.5.</span> <span class="nav-text">方法五：使用CSS的:after伪元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是BFC？"><span class="nav-number">2.6.</span> <span class="nav-text">什么是BFC？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端，GM5" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -84,12 +84,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="GM5'Visual magic">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="##1.变量定义变量要使用var操作符,后跟一个变量→ var message;（此时保存一个underfined的特殊值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/12/11/psot3/index.html">
 <meta property="og:site_name" content="GM5'Visual magic">
+<meta property="og:description" content="##1.变量定义变量要使用var操作符,后跟一个变量→ var message;（此时保存一个underfined的特殊值">
+<meta property="og:updated_time" content="2016-12-11T13:49:25.090Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GM5'Visual magic">
+<meta name="twitter:title" content="js学习笔记">
+<meta name="twitter:description" content="##1.变量定义变量要使用var操作符,后跟一个变量→ var message;（此时保存一个underfined的特殊值">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/11/psot3/"/>
 
 
 
 
 
-  <title> GM5'Visual magic </title>
+  <title> js学习笔记 | GM5'Visual magic </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,9 +148,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,9 +270,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -303,10 +305,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/12/11/psot3/" itemprop="url">
-                  js学习笔记
-                </a>
+                js学习笔记
               
             
           </h1>
@@ -380,484 +379,127 @@
       
 
       
-        
-          <p>##1.变量<br>定义变量要使用var操作符,后跟一个变量→ <code>var message;</code>（此时保存一个underfined的特殊值
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/11/psot3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>##1.变量<br>定义变量要使用var操作符,后跟一个变量→ <code>var message;</code>（此时保存一个underfined的特殊值<a id="more"></a><br>这是定义了一个message的变量，该变量可以用来保存任何值（number、string、布尔值等等）。<br>变量的命名规范：1.必须以字母、下划线、$符号开头，不能以数字开头;<br><code>var message = &quot;hi&quot;</code> 这时是在变量message中保存了一个字符串”hi”，也可以写作:<code>var message; massage=&quot;hi&quot;</code>;</p>
+<p>##2.表达式<br>表达式指具有一定的值，用操作符号，把常数和变量连接起来的代数式。<br>一个表达式客一包含常数或变量。<code>num=num+1;</code> (num是变量，num+1是表达式)。</p>
+<p>##3.++和- -（自加一，自减一）</p>
+<ul>
+<li>a++<br>把<code>a++</code>作为一个整体表达式，a的值虽然自增一，但是整个表达式的值是取a自增之前的值:<code>m=a++; m=a; a=a+1;</code></li>
+<li>++a<br>把<code>++a</code>作为一个整体表达式，a的值虽然也自增一，但是整个表达式的值是取a自增之后的值:<code>m=++a; a=a+1; m=a</code></li>
+</ul>
+<p>##4.操作符之间的优先级（高到低）:</p>
+<p>算术操作符 → 比较操作符 → 逻辑操作符 → “=”赋值符号<br>如果同级的运算是按从左到右次序进行,多层括号由里向外。</p>
+<p>##5.数组<br>创建数组语法：</p>
+<pre><code>var myarray=new Array();
+
+var myarray= new Array(8); //创建数组，存储8个数据。（感觉没卵用） 
+</code></pre><p>注意：<br>1.创建的新数组是空数组，没有值，如输出，则显示undefined。<br>2.虽然创建数组时，指定了长度，但实际上数组都是变长的，也就是说即使指定了长度为8，仍然可以将元素存储在规定长度以外。</p>
+<p>###1.数组的表达方式：<br><strong>简单方法</strong></p>
+<pre><code>var myarray = new Array(66,80,90,77,59);    //创建数组同时赋值
+var myarray = [66,80,90,77,59];            //直接输入一个数组（称 “字面量数组”）
+</code></pre><p><strong>复杂方法</strong></p>
+<pre><code>var myarray=new Array(); //创建一个新的空数组
+    myarray[0]=66; //存储第1个人的成绩
+    myarray[1]=80; //存储第2个人的成绩
+    myarray[2]=90; //存储第3个人的成绩
+    myarray[3]=77; //存储第4个人的成绩
+    myarray[4]=59; //存储第5个人的成绩
+</code></pre><p>###2.数组属性length<br>如果我们想知道数组的大小，只需引用数组的一个属性length。<br>Length属性表示数组的长度，即数组中元素的个数。<br>语法：</p>
+<pre><code>myarray.length; //获得数组myarray的长度
+</code></pre><p><small><strong>注意：因为数组的索引总是由0开始，所以一个数组的上下限分别是：0和length-1。如数组的长度是5，数组的上下限分别是0和4</strong></small></p>
+<p>同时，JavaScript数组的length属性是可变的，这一点需要特别注意。</p>
+<pre><code>arr.length=10; //增大数组的长度
+document.write(arr.length); //数组长度已经变为10
+</code></pre><p>数组随元素的增加，长度也会改变，如下:</p>
+<pre><code>var arr=[98,76,54,56,76]; // 包含5个数值的数组
+document.write(arr.length); //显示数组的长度5
+arr[15]=34;  //增加元素，使用索引为15,赋值为34
+alert(arr.length); //显示数组的长度16
+</code></pre><p>###3.二维数组<br><strong>二维数组的定义方法一</strong></p>
+<pre><code>var myarr=new Array();  //先声明一维 
+for(var i=0;i&lt;2;i++){   //一维长度为2
+   myarr[i]=new Array();  //再声明二维 
+   for(var j=0;j&lt;3;j++){   //二维长度为3
+   myarr[i][j]=i+j;   // 赋值，每个数组元素的值为i+j
+   }
+ }
+</code></pre><p> <strong>二维数组的定义方法二</strong></p>
+<pre><code>var Myarr = [[0 , 1 , 2 ],[1 , 2 , 3]]；
+</code></pre>
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/10/psot2/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="GM5">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GM5'Visual magic">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="GM5'Visual magic" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/10/psot2/" itemprop="url">
-                  关于清除浮动
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-10T16:08:45+08:00">
-                2016-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/10/psot2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/10/psot2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>看了两天的javascript了，我觉得学习javascript与学习html、css相比，前者的难度简直与后者不是一个级别的阿！香菇！蓝瘦！</p>
-<p>唉，头疼，今晚就CSS里清除浮动的知识写一下我的理解吧！
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/10/psot2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/10/psot2/" rel="next" title="关于清除浮动">
+                <i class="fa fa-chevron-left"></i> 关于清除浮动
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/06/post“/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="GM5">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GM5'Visual magic">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="GM5'Visual magic" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/06/post“/" itemprop="url">
-                  最近的学习感想
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-06T18:47:52+08:00">
-                2016-12-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/06/post“/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/06/post“/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>&#160; &#160; &#160; &#160;最近把《Head First HTML与CSS》这本书读完了，真的是非常经典，书刚送到时候看到这么厚一本，吓了我一跳，还以为是本字典呢！(;´Д`)后来看着发现对于我这种初学者简直不能再赞了！
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/06/post“/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/12/11/psot3/"
+     data-title="js学习笔记"
+     data-content=""
+     data-url="http://yoursite.com/2016/12/11/psot3/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/03/my-new-post/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="GM5">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="GM5'Visual magic">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="GM5'Visual magic" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/03/my-new-post/" itemprop="url">
-                  由“三栏式练习”引发的思考
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-03T16:36:29+08:00">
-                2016-12-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/03/my-new-post/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/03/my-new-post/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&#160; &#160; &#160;&#160;开始学前端已经有一周了，HTML和css基础也快看完了，昨天在做一个“三栏式布局”的练习，遇到了一些小问题，就在这写一写吧。
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/03/my-new-post/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -865,6 +507,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/11/psot3/"
+           data-title="js学习笔记" data-url="http://yoursite.com/2016/12/11/psot3/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1079,6 +729,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
